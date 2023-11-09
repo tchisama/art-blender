@@ -37,12 +37,13 @@ const modules = [
   ];
 
 export default function ModuleSelect() {
+    const [module, setModule] = React.useState(0);
   return (
     <Select
       items={modules}
-      
       className="max-w-xs"
       variant="bordered"
+      placeholder="Select a module"
       classNames={{
         label: "group-data-[filled=true]:-translate-y-5",
         trigger: "min-h-unit-16",
