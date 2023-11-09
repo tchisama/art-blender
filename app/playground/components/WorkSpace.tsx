@@ -19,7 +19,7 @@ function WorkSpace({}: Props) {
         <Button
           size="lg"
           color="secondary"
-          className="shadow-lg"
+          variant="shadow"
           startContent={<RiMagicFill />}
         >
           Generate
