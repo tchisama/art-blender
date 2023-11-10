@@ -7,6 +7,8 @@ import ImageViewer from "@/components/ImageViewer";
 import axios from "axios"
 import Prompt from "./Prompt";
 import useResultsStore from "@/store/resultsStore";
+import {FiDownload} from "react-icons/fi"
+import {PiShareFatBold as FaShare} from "react-icons/pi"
 
 type Props = {};
 function WorkSpace({}: Props) {
@@ -23,12 +25,18 @@ function WorkSpace({}: Props) {
         {
           results.map((r,i)=>(
             <>
-            <ImageViewer key={i} img={r.url}/>
+            <div className="rotate-0">
+              <ImageViewer key={i} img={r.url}/>
+            </div>
             <div className="flex col-span-2 p-6 gap-6 flex-col">
               <h2 className="text-2xl">
                   Revised Prompt
               </h2>
-              <p className="">{r.prompt}</p>
+              <p className="flex-1">{r.prompt}</p>
+              <div className="flex justify-end gap-2">
+                <Button variant="bordered" size="lg"  startContent={<FaShare/>}>Share</Button>
+                <Button size="lg" variant="solid" color={"secondary"}  startContent={<FiDownload/>}>Download</Button>
+              </div>
             </div>
             </>
             

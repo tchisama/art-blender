@@ -5,6 +5,7 @@ import { TbDiamondFilled } from 'react-icons/tb'
 import ModuleSelect from './ModuleSelect'
 import NumbersOfImages from './NumbersOfImages'
 import ImageSize from './ImageSize'
+import DalleV from './DalleV'
 type Props = {}
 
 function Sidebar({}: Props) {
@@ -30,6 +31,8 @@ function Sidebar({}: Props) {
       </Card>
       <Divider className='my-4'/>
       <div>
+       <p className='text-lg my-2'>Number of images</p>
+       <DalleV/>
        <p className='text-lg my-2'>Number of images</p>
        <NumbersOfImages/>
        <p className='text-lg my-2'>Modules</p>
