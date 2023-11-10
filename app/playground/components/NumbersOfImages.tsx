@@ -1,4 +1,5 @@
 "use client"
+import usePromptStore from '@/store/promptStore'
 import { Button } from '@nextui-org/react'
 import React from 'react'
 
@@ -6,7 +7,7 @@ type Props = {}
 
 const NumbersOfImages = (props: Props) => {
 
-  const [NumberOfImages, setNumberOfImages] = React.useState(1)
+    const {n:NumberOfImages,setN:setNumberOfImages}=usePromptStore()
   return (
        <div className='grid grid-cols-4 gap-1'>
         {

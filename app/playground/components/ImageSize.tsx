@@ -1,9 +1,11 @@
+import usePromptStore from '@/store/promptStore'
 import { Slider } from '@nextui-org/react'
 import React from 'react'
 
 type Props = {}
 
 const ImageSize = (props: Props) => {
+    const { width,setWidth,height,setHeight } = usePromptStore()
   return (
     <div>
     <Slider
@@ -13,7 +15,8 @@ const ImageSize = (props: Props) => {
         step={1}
         maxValue={1024} 
         minValue={0} 
-        defaultValue={1024}
+        defaultValue={width}
+        onChange={(v) => setWidth(v as number)}
       />
     <Slider
         size="lg"
@@ -22,7 +25,8 @@ const ImageSize = (props: Props) => {
         label="Height"
         maxValue={1024} 
         minValue={0} 
-        defaultValue={1024}
+        defaultValue={height}
+        onChange={(v) => setHeight(v as number)}
       />
     </div>
   )

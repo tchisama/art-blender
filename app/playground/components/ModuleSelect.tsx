@@ -1,5 +1,6 @@
 import React from "react";
 import {Select, SelectItem, Avatar} from "@nextui-org/react";
+import usePromptStore from "@/store/promptStore";
 
 
 const modules = [
@@ -37,7 +38,7 @@ const modules = [
   ];
 
 export default function ModuleSelect() {
-    const [module, setModule] = React.useState(0);
+    const {module,setModule} = usePromptStore()
   return (
     <Select
       items={modules}
@@ -49,6 +50,9 @@ export default function ModuleSelect() {
         trigger: "min-h-unit-16",
         listboxWrapper: "max-h-[400px]",
       }}
+      onChange={v=>setModule(v.target.value)}
+      value={module}
+      defaultSelectedKeys={[module]}
       listboxProps={{
         itemClasses: {
           base: [
@@ -88,7 +92,7 @@ export default function ModuleSelect() {
       }}
     >
       {(user) => (
-        <SelectItem key={user.id} textValue={user.name}>
+        <SelectItem key={user.name} textValue={user.name}>
           <div className="flex gap-2 items-center">
             <Avatar alt={user.name} className="flex-shrink-0" size="sm" src={user.avatar} />
             <div className="flex flex-col">
