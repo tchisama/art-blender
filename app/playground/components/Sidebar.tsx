@@ -9,7 +9,7 @@ type Props = {}
 
 function Sidebar({}: Props) {
   return (
-    <div className='w-[300px] sticky top-0 bg-foreground-50 shadow-xl h-screen p-4'>
+    <div className='w-[400px] sticky top-0 border-r  h-screen p-4'>
       <h1 className='text-2xl drop-shadow-md font-bold'>ArtBlender</h1>
       <Divider className='my-4'/>
       <Card>
@@ -23,7 +23,7 @@ function Sidebar({}: Props) {
           <Divider className='my-2'/>
           <div className='flex justify-between items-center'>
               <p className='text-lg flex gap-2 items-center'>140 <TbDiamondFilled/></p>
-              <Button variant='shadow' startContent={<TbDiamondFilled/>} color="secondary"> Upgrade</Button>
+              <Button radius='full' variant='shadow' startContent={<TbDiamondFilled/>} color="secondary"> Upgrade</Button>
           </div>
 
         </CardBody>

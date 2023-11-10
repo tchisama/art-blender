@@ -42,7 +42,7 @@ export default function ModuleSelect() {
   return (
     <Select
       items={modules}
-      className="max-w-xs"
+      className=""
       variant="bordered"
       placeholder="Select a module"
       classNames={{
