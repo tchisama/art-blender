@@ -11,9 +11,11 @@ import useResultsStore from "@/store/resultsStore";
 type Props = {}
 
 function Prompt({}: Props) {
-    const {prompt,setPrompt,module,n,width,height} = usePromptStore()
+    const {prompt,setPrompt,module,n,size} = usePromptStore()
     const {setResults} = useResultsStore()
+    const [loading, setLoading] = React.useState(false)
     const generateImage = () => {
+        setLoading(true)
         axios({
             method: 'post',
             url: 'http://localhost:3001/api/generateImage',
@@ -21,12 +23,14 @@ function Prompt({}: Props) {
                 "prompt":prompt,
                 "model":module,
                 "n":n,
-                "size":`${width}x${height}`
+                "size":size
               }
           }).then((res)=>{
                 console.log(res.data.data)
               setResults(res.data.data)
 
+          }).finally(()=>{
+              setLoading(false)
           });
     };
   return (
@@ -43,6 +47,7 @@ function Prompt({}: Props) {
         />
         <Tooltip content="cost 10 diamonds">
             <Button
+            isLoading={loading}
             size="lg"
             color="secondary"
             variant="shadow"

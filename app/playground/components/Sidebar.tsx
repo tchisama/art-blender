@@ -34,8 +34,8 @@ function Sidebar({}: Props) {
        <NumbersOfImages/>
        <p className='text-lg my-2'>Modules</p>
        <ModuleSelect/>
-       <p className='text-lg my-2'>Image Size</p>
-       <ImageSize/>
+       {/* <p className='text-lg my-2'>Image Size</p>
+       <ImageSize/> */}
       </div>
     </div>
   )

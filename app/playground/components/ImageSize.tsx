@@ -1,33 +1,19 @@
 import usePromptStore from '@/store/promptStore'
-import { Slider } from '@nextui-org/react'
+import { Button, Slider } from '@nextui-org/react'
 import React from 'react'
 
 type Props = {}
 
 const ImageSize = (props: Props) => {
-    const { width,setWidth,height,setHeight } = usePromptStore()
+    const { size , setSize } = usePromptStore()
+    const sizes = ['256x256', '512x512', '1024x1024', '1024x1792', '1792x1024']
   return (
-    <div>
-    <Slider
-        size="lg"
-        color="secondary"
-        label="Width"
-        step={1}
-        maxValue={1024} 
-        minValue={0} 
-        defaultValue={width}
-        onChange={(v) => setWidth(v as number)}
-      />
-    <Slider
-        size="lg"
-        color="secondary"
-        step={1}
-        label="Height"
-        maxValue={1024} 
-        minValue={0} 
-        defaultValue={height}
-        onChange={(v) => setHeight(v as number)}
-      />
+    <div className='grid grid-cols-2 gap-1'>
+        {
+            sizes.map((s,i)=>(
+                <Button variant={size==s?'solid':'bordered'} key={i} onClick={()=>{setSize(s)}} className='w-full'>{s}</Button>
+            ))
+        }
     </div>
   )
 }
