@@ -31,7 +31,7 @@ const modules = [
       id: 5,
       name: "fantasy",
       description: "fantasy world creations",
-      avatar: "https://images.nightcafe.studio/jobs/dwCf9XA0o0lfCTDQUthb/dwCf9XA0o0lfCTDQUthb--1--lcot9_6x.jpg?tr=w-1200",
+      avatar: "https://firebasestorage.googleapis.com/v0/b/alamiphotography-b75a1.appspot.com/o/img-UjKsI6nFA6il3dOwvkFysQXZ.png?alt=media&token=d0ead8e2-915f-4bd5-808c-d74e67e25566",
     },
     // Add more modules as needed
   ];
@@ -72,11 +72,11 @@ export default function ModuleSelect() {
       }}
       renderValue={(items) => {
         return items.map((item) => (
-          <div key={item.key} className="flex items-center gap-2">
+          <div key={item.key} className="flex py-2 items-center gap-2">
             <Avatar
               alt={item.data?.name}
               className="flex-shrink-0"
-              size="sm"
+              size="md"
               src={item.data?.avatar}
             />
             <div className="flex flex-col">

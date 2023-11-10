@@ -7,26 +7,22 @@ const ImageSize = (props: Props) => {
   return (
     <div>
     <Slider
-        size="md"
-        step={128}
+        size="lg"
         color="secondary"
         label="Width"
-        showSteps={true} 
+        step={1}
         maxValue={1024} 
         minValue={0} 
-        defaultValue={500}
-        className="max-w-md" 
+        defaultValue={1024}
       />
     <Slider
-        size="md"
-        step={128}
+        size="lg"
         color="secondary"
+        step={1}
         label="Height"
-        showSteps={true} 
         maxValue={1024} 
         minValue={0} 
-        defaultValue={500}
-        className="max-w-md" 
+        defaultValue={1024}
       />
     </div>
   )
