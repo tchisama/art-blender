@@ -1,11 +1,16 @@
-import React from 'react'
-
-type Props = {}
-
-function resultsStore({}: Props) {
-  return (
-    <div>resultsStore</div>
-  )
+import create from 'zustand';
+type res = {
+    url:string,
+    prompt:string
+}
+interface ResultsState {
+  results: res[];
+  setResults: (result: res[]) => void;
 }
 
-export default resultsStore
+const useResultsStore = create<ResultsState>((set) => ({
+  results: [],
+  setResults: (result) => set({ results: result }),
+}));
+
+export default useResultsStore;

@@ -12,7 +12,7 @@ export default function ImageViewer({img}:{img:string}) {
         <ModalContent>
           {(onClose) => (
             <>
-                    <Image isZoomed width={"100%"}  alt="" src={img}></Image>
+                    <Image width={"100%"}  alt="" src={img}></Image>
             </>
           )}
         </ModalContent>

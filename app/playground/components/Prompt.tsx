@@ -6,12 +6,13 @@ import { BsDiamondFill } from "react-icons/bs";
 import ImageViewer from "@/components/ImageViewer";
 import axios from "axios"
 import usePromptStore from "@/store/promptStore";
+import useResultsStore from "@/store/resultsStore";
 
 type Props = {}
 
 function Prompt({}: Props) {
     const {prompt,setPrompt,module,n,width,height} = usePromptStore()
-
+    const {setResults} = useResultsStore()
     const generateImage = () => {
         axios({
             method: 'post',
@@ -22,6 +23,10 @@ function Prompt({}: Props) {
                 "n":n,
                 "size":`${width}x${height}`
               }
+          }).then((res)=>{
+                console.log(res.data.data)
+              setResults(res.data.data)
+
           });
     };
   return (

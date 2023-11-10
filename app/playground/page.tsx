@@ -6,7 +6,7 @@ type Props = {}
 
 function page({}: Props) {
   return (
-    <div className='flex min-w-screen'>
+    <div className='flex relative min-w-screen'>
         <Sidebar/>
         <WorkSpace/>
     </div>
