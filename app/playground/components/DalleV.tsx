@@ -18,6 +18,7 @@ const DalleV = (props: Props) => {
         variant='bordered'
         value={dallev}
         onChange={e=>setDallev(e.target.value)}
+        defaultSelectedKeys={[dallev]}
       >
         {dalles.map((dalle) => (
           <SelectItem key={dalle} value={dalle}>

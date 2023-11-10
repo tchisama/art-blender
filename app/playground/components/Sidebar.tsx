@@ -6,9 +6,11 @@ import ModuleSelect from './ModuleSelect'
 import NumbersOfImages from './NumbersOfImages'
 import ImageSize from './ImageSize'
 import DalleV from './DalleV'
+import usePromptStore from '@/store/promptStore'
 type Props = {}
 
 function Sidebar({}: Props) {
+  const {dallev} = usePromptStore()
   return (
     <div className='w-[400px] sticky top-0 border-r  h-screen p-4'>
       <h1 className='text-2xl drop-shadow-md font-bold'>ArtBlender</h1>
@@ -23,7 +25,7 @@ function Sidebar({}: Props) {
           </div>
           <Divider className='my-2'/>
           <div className='flex justify-between items-center'>
-              <p className='text-lg flex gap-2 items-center'>140 <TbDiamondFilled/></p>
+              <p className='text-xl flex gap-2 items-center'>140 <TbDiamondFilled/></p>
               <Button radius='full' variant='shadow' startContent={<TbDiamondFilled/>} color="secondary"> Upgrade</Button>
           </div>
 
@@ -31,14 +33,19 @@ function Sidebar({}: Props) {
       </Card>
       <Divider className='my-4'/>
       <div>
-       <p className='text-lg my-2'>Number of images</p>
+       <p className='text-lg my-2'>Dall-e version</p>
        <DalleV/>
-       <p className='text-lg my-2'>Number of images</p>
-       <NumbersOfImages/>
        <p className='text-lg my-2'>Modules</p>
        <ModuleSelect/>
-       {/* <p className='text-lg my-2'>Image Size</p>
-       <ImageSize/> */}
+       {
+        dallev == "dall-e-2" &&
+        <>
+          <p className='text-lg my-2'>Number of images</p>
+          <NumbersOfImages/>
+          <p className='text-lg my-2'>Image Size</p>
+          <ImageSize/>
+        </>
+       }
       </div>
     </div>
   )

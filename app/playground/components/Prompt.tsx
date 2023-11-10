@@ -7,10 +7,11 @@ import ImageViewer from "@/components/ImageViewer";
 import axios from "axios"
 import usePromptStore from "@/store/promptStore";
 import useResultsStore from "@/store/resultsStore";
+import {TbDiamondFilled} from "react-icons/tb"
 type Props = {}
 
 function Prompt({}: Props) {
-    const {prompt,setPrompt,module,n,size} = usePromptStore()
+    const {prompt,setPrompt,module,n,size,dallev} = usePromptStore()
     const {setResults} = useResultsStore()
     const [loading, setLoading] = React.useState(false)
     const generateImage = () => {
@@ -21,8 +22,9 @@ function Prompt({}: Props) {
             data: {
                 "prompt":prompt,
                 "model":module,
-                "n":n,
-                "size":size
+                "n":dallev=="dall-e-3"?1:n,
+                "dallev":dallev,
+                "size":dallev=="dall-e-3"?"1024x1024":size,
               }
           }).then((res)=>{
                 console.log(res.data.data)
@@ -54,13 +56,18 @@ function Prompt({}: Props) {
               color="secondary"
               variant="shadow"
               radius="full"
-              endContent={!loading && <RiMagicFill />}
+              startContent={!loading && <RiMagicFill />}
               onClick={() => generateImage()}
+              className="flex gap-2"
               >
+                <div>
                 {
                   !loading?
                   "Generate":"Generating"
                 }
+                </div>
+                <div>|</div>
+                <div className="flex items-center gap-2 ">15 <TbDiamondFilled/> </div>
               </Button>
           </Tooltip>
         </div>
