@@ -15,7 +15,7 @@ function WorkSpace({}: Props) {
   const {results,setResults} = useResultsStore()
   return (
     <div className=" flex-1 h-screen">
-        <div className="flex p-4 h-screen max-w-7xl mx-auto gap-2 flex-col">
+        <div className="flex p-4 h-screen max-w-[1600px] mx-auto gap-2 flex-col">
 
       <h2 className="text-xl">AI Image Generation</h2>
       <Prompt/>

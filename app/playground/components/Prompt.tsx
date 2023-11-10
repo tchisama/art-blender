@@ -24,7 +24,7 @@ function Prompt({}: Props) {
                 "model":module,
                 "n":dallev=="dall-e-3"?1:n,
                 "dallev":dallev,
-                "size":dallev=="dall-e-3"?"1024x1024":size,
+                "size":(dallev=="dall-e-3")?"1024x1024":size,
               }
           }).then((res)=>{
                 console.log(res.data.data)

@@ -6,7 +6,7 @@ type Props = {}
 
 const ImageSize = (props: Props) => {
     const { size , setSize } = usePromptStore()
-    const sizes = ['256x256', '512x512', '1024x1024', '1024x1792', '1792x1024']
+    const sizes = ['256x256', '512x512', '1024x1024']
   return (
     <div className='grid grid-cols-2 gap-1'>
         {
