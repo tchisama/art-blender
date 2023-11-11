@@ -15,8 +15,8 @@ function Sidebar({}: Props) {
   const {data:session} = useSession()
   return (
     <div className='w-[400px] sticky top-0 border-r  h-screen p-4'>
-      <h1 className='text-2xl drop-shadow-md font-bold'>ArtBlender</h1>
-      <Divider className='my-4'/>
+      {/* <h1 className='text-2xl drop-shadow-md font-bold'>ArtBlender</h1>
+      <Divider className='my-4'/> */}
       <Card>
         <CardBody>
           <div className='flex items-center gap-4'>
