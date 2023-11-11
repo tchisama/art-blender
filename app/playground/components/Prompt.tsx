@@ -8,6 +8,7 @@ import axios from "axios"
 import usePromptStore from "@/store/promptStore";
 import useResultsStore from "@/store/resultsStore";
 import {TbDiamondFilled} from "react-icons/tb"
+import {useQuery } from "@tanstack/react-query";
 type Props = {}
 
 function Prompt({}: Props) {
@@ -34,6 +35,7 @@ function Prompt({}: Props) {
               setLoading(false)
           });
     };
+
   return (
       <div className="flex mt-4 gap-2 flex-col">
         <Textarea

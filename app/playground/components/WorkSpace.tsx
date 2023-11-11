@@ -21,14 +21,14 @@ function WorkSpace({}: Props) {
       <Prompt/>
       <h2 className="text-lg mt-6">Generations</h2>
       <div className="flex-1 overflow-y-auto p-8 rounded-3xl">
-      <div className=" grid grid-cols-3 py-4 gap-6">
+      <div className=" grid grid-cols-1 lg:grid-cols-5 py-4 gap-6">
         {
           results.map((r,i)=>(
             <>
-            <div className="rotate-0">
+            <div className="rotate-0 lg:col-span-2">
               <ImageViewer key={i} img={r.url}/>
             </div>
-            <div className="flex col-span-2 p-6 gap-6 flex-col">
+            <div className="flex lg:col-span-3 p-6 gap-6 flex-col">
               <h2 className="text-2xl">
                   Revised Prompt
               </h2>

@@ -1,5 +1,5 @@
 import create from 'zustand';
-type res = {
+export type res = {
     url:string,
     prompt:string
 }
