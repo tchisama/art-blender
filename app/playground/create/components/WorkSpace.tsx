@@ -32,9 +32,9 @@ function WorkSpace({}: Props) {
             key={i}
           >
 
-            <div className="flex gap-8 p-4">
+            <div className="flex gap-12 p-4">
                 <div className="flex-[2]">
-                  <ImageViewer key={i} img={r.url}/>
+                    <ImageViewer key={i} img={r.url}/>
                 </div>
                 {/* <div className="flex flex-[3]  gap-6 flex-col">
                   <h2 className="text-2xl">

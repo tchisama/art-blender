@@ -3,6 +3,7 @@ import { Button, Image, Textarea, Tooltip } from "@nextui-org/react";
 import React from "react";
 import { RiMagicFill } from "react-icons/ri";
 import { BsDiamondFill ,BsStars } from "react-icons/bs";
+import { BiSolidImageAlt } from "react-icons/bi"
 import ImageViewer from "@/components/ImageViewer";
 import axios from "axios"
 import usePromptStore from "@/store/promptStore";
@@ -45,10 +46,15 @@ function Prompt({}: Props) {
           placeholder="type your prompt .."
           className="flex-1 "
         />
-        <div className="flex justify-between mt-3">
-          <Tooltip content={"let me make a prompt for you"}>
+        <div className="flex justify-start gap-2 mt-3">
+          <Tooltip content={"Random Prompt"}>
             <Button disabled={loading} size="lg" variant="bordered" isIconOnly>
               <BsStars />
+            </Button>
+          </Tooltip>
+          <Tooltip content={"Steal Style"}>
+            <Button disabled={loading} size="lg" variant="bordered" isIconOnly>
+              <BiSolidImageAlt />
             </Button>
           </Tooltip>
           <Tooltip content="cost 10 diamonds">
@@ -61,7 +67,7 @@ function Prompt({}: Props) {
               radius="full"
               startContent={!loading && <RiMagicFill />}
               onClick={() => generateImage()}
-              className="flex gap-2"
+              className="flex gap-2 ml-auto"
               >
                 <div>
                 {
