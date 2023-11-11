@@ -56,6 +56,7 @@ function Prompt({}: Props) {
               isLoading={loading}
               size="lg"
               color="secondary"
+              disabled={!(prompt&&size&&module&&dallev)}
               variant="shadow"
               radius="full"
               startContent={!loading && <RiMagicFill />}
