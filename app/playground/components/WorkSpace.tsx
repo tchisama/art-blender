@@ -28,15 +28,12 @@ function WorkSpace({}: Props) {
           results.map((r,i)=>(
             // <Card key={i} className="max-w-none flex gap-2">
             // </Card>
-          <Card
-            radius="lg"
-            className="border-none"
+          <div
             key={i}
-            shadow="lg"
           >
 
             <div className="flex gap-8 p-4">
-                <div className="flex-1">
+                <div className="flex-[2]">
                   <ImageViewer key={i} img={r.url}/>
                 </div>
                 {/* <div className="flex flex-[3]  gap-6 flex-col">
@@ -45,7 +42,7 @@ function WorkSpace({}: Props) {
                   </h2>
                   <p className="flex-1">{r.prompt}</p>
                 </div> */}
-              <div className="flex flex-col flex-[2] justify-end gap-2">
+              <div className="flex flex-col flex-[3] justify-end gap-2">
                   <h2 className="text-2xl mt-2">
                       Revised Prompt
                   </h2>
@@ -58,7 +55,7 @@ function WorkSpace({}: Props) {
                   </div>
               </div>
             </div>
-          </Card>
+          </div>
           ))
         }
       </div>
