@@ -7,10 +7,12 @@ import NumbersOfImages from './NumbersOfImages'
 import ImageSize from './ImageSize'
 import DalleV from './DalleV'
 import usePromptStore from '@/store/promptStore'
+import {useSession} from "next-auth/react"
 type Props = {}
 
 function Sidebar({}: Props) {
   const {dallev} = usePromptStore()
+  const {data:session} = useSession()
   return (
     <div className='w-[400px] sticky top-0 border-r  h-screen p-4'>
       <h1 className='text-2xl drop-shadow-md font-bold'>ArtBlender</h1>
@@ -18,9 +20,9 @@ function Sidebar({}: Props) {
       <Card>
         <CardBody>
           <div className='flex items-center gap-4'>
-            <Avatar size="sm" alt="avatar" src="https://i.pravatar.cc/320" />
+            <Avatar size="sm" alt="avatar" src={session?.user?.image ?? ""} />
             <div>
-              <p>tchisama</p>
+              <p>{session?.user?.name ?? ""}</p>
             </div>
           </div>
           <Divider className='my-2'/>
