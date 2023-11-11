@@ -13,6 +13,8 @@ import {PiShareFatBold as FaShare} from "react-icons/pi"
 type Props = {};
 function WorkSpace({}: Props) {
   const {results,setResults} = useResultsStore()
+
+
   return (
     <div className=" flex-1 h-screen">
         <div className="flex p-4 h-screen max-w-[1600px] mx-auto gap-2 flex-col">
@@ -35,7 +37,9 @@ function WorkSpace({}: Props) {
               <p className="flex-1">{r.prompt}</p>
               <div className="flex justify-end gap-2">
                 <Button variant="bordered" size="lg"  startContent={<FaShare/>}>Share</Button>
-                <Button size="lg" variant="solid" color={"secondary"}  startContent={<FiDownload/>}>Download</Button>
+                <a onClick={e=>e.defaultPrevented()} download={r.url} href={r.url}>
+                    <Button  size="lg" variant="solid" color={"secondary"}  startContent={<FiDownload/>}>Download</Button>
+                </a>
               </div>
             </div>
             </>
