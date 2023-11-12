@@ -34,6 +34,54 @@ const modules = [
       description: "fantasy world creations",
       avatar: "https://firebasestorage.googleapis.com/v0/b/alamiphotography-b75a1.appspot.com/o/img-UjKsI6nFA6il3dOwvkFysQXZ.png?alt=media&token=d0ead8e2-915f-4bd5-808c-d74e67e25566",
     },
+    {
+      id: 2,
+      name: "portrait",
+      description: "realistic portrait generation",
+      avatar: "https://cdna.artstation.com/p/assets/images/images/036/669/060/large/coisini-serein-d54b78aabf789d9b1266b2abe485-hires.jpg?1618307581",
+    },
+    {
+      id: 3,
+      name: "landscape",
+      description: "beautiful landscape scenes",
+      avatar: "https://th.bing.com/th/id/OIP.FNRjBWnArIECXfdnWvNrWAHaEK?pid=ImgDet&rs=1",
+    },
+    {
+      id: 4,
+      name: "cartoon",
+      description: "cartoon-style illustrations",
+      avatar: "https://th.bing.com/th/id/R.07236489f54f5a6f91ede61a5b805da6?rik=m7AJs7zCdXB2Bg&pid=ImgRaw&r=0",
+    },
+    {
+      id: 5,
+      name: "fantasy",
+      description: "fantasy world creations",
+      avatar: "https://firebasestorage.googleapis.com/v0/b/alamiphotography-b75a1.appspot.com/o/img-UjKsI6nFA6il3dOwvkFysQXZ.png?alt=media&token=d0ead8e2-915f-4bd5-808c-d74e67e25566",
+    },
+    {
+      id: 2,
+      name: "portrait",
+      description: "realistic portrait generation",
+      avatar: "https://cdna.artstation.com/p/assets/images/images/036/669/060/large/coisini-serein-d54b78aabf789d9b1266b2abe485-hires.jpg?1618307581",
+    },
+    {
+      id: 3,
+      name: "landscape",
+      description: "beautiful landscape scenes",
+      avatar: "https://th.bing.com/th/id/OIP.FNRjBWnArIECXfdnWvNrWAHaEK?pid=ImgDet&rs=1",
+    },
+    {
+      id: 4,
+      name: "cartoon",
+      description: "cartoon-style illustrations",
+      avatar: "https://th.bing.com/th/id/R.07236489f54f5a6f91ede61a5b805da6?rik=m7AJs7zCdXB2Bg&pid=ImgRaw&r=0",
+    },
+    {
+      id: 5,
+      name: "fantasy",
+      description: "fantasy world creations",
+      avatar: "https://firebasestorage.googleapis.com/v0/b/alamiphotography-b75a1.appspot.com/o/img-UjKsI6nFA6il3dOwvkFysQXZ.png?alt=media&token=d0ead8e2-915f-4bd5-808c-d74e67e25566",
+    },
     // Add more modules as needed
   ];
 

@@ -12,7 +12,7 @@ async function page({}: Props) {
     redirect("/api/auth/signin")
   }
   return (
-    <div className='flex relative min-w-screen'>
+    <div className='flex flex-1 relative min-w-screen'>
         <Sidebar/>
         <WorkSpace/>
     </div>

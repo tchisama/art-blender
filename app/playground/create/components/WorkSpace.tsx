@@ -16,14 +16,14 @@ function WorkSpace({}: Props) {
 
 
   return (
-    <div className=" flex-1 h-screen">
-        <div className="flex p-4 h-screen max-w-[1600px] mx-auto gap-2 flex-col">
+    <div className=" flex-1 h-screen flex ">
+        <div className="flex w-full flex-1 p-4  h-screen max-w-[1600px] mx-auto gap-2 flex-col">
 
       <h2 className="text-xl">AI Image Generation</h2>
       <Prompt/>
       <h2 className="text-lg mt-6">Generations</h2>
       <div className="flex-1 rounded-3xl">
-      <div className="grid grid-cols-1 gap-6">
+      <div className="flex flex-col w-full gap-6">
         {
           results.map((r,i)=>(
             // <Card key={i} className="max-w-none flex gap-2">
@@ -32,7 +32,7 @@ function WorkSpace({}: Props) {
             key={i}
           >
 
-            <div className="flex gap-12 p-4">
+            <div className="flex w-full gap-12 p-4">
                 <div className="flex-[4]">
                     <ImageViewer key={i} img={r.url}/>
                 </div>
