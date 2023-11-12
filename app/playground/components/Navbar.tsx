@@ -7,6 +7,7 @@ import { AiFillHeart } from 'react-icons/ai'
 import { useSession } from 'next-auth/react'
 import { useRouter } from 'next/router'
 import { usePathname } from 'next/navigation'
+import Link from 'next/link'
 type Props = {}
 
 
@@ -34,7 +35,9 @@ const Navbar = (props: Props) => {
     const path = usePathname()
   return (
     <div className='w-[300px] bg-background border-r flex flex-col p-4 gap-2'>
-        <h1 className='text-2xl text-secondary-500  drop-shadow-md font-bold flex gap-2 my-4 items-center'><RiMagicFill/> ArtBlender</h1>
+        <Link href={"/"}>
+            <h1 className='text-2xl text-secondary-500  drop-shadow-md font-bold flex gap-2 my-4 items-center'><RiMagicFill/> ArtBlender</h1>
+        </Link>
         <div className='flex flex-col gap-2 mt-14 flex-1'>
             {
                 links.map((l,i)=>(

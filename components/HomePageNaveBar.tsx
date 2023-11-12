@@ -9,7 +9,7 @@ const HomePageNaveBar = (props: Props) => {
   return (
     <div>
         <AuthButton/>
-        <Link href={"/playground"}>
+        <Link href={"/playground/create"}>
             <Button>Playground</Button>
         </Link>
     </div>
