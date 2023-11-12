@@ -14,7 +14,7 @@ function Sidebar({}: Props) {
   const {dallev} = usePromptStore()
   const {data:session} = useSession()
   return (
-    <div className='w-[400px] sticky top-0 border-r  h-screen p-4'>
+    <div className='w-[300px] sticky top-0 border-r  h-screen p-4'>
       {/* <h1 className='text-2xl drop-shadow-md font-bold'>ArtBlender</h1>
       <Divider className='my-4'/> */}
       <Card shadow='sm'>

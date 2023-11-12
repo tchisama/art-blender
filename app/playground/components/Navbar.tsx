@@ -34,7 +34,7 @@ const Navbar = (props: Props) => {
     const {data:session} = useSession()
     const path = usePathname()
   return (
-    <div className='w-[300px] bg-background border-r flex flex-col p-4 gap-2'>
+    <div className='w-[250px] bg-background border-r flex flex-col p-4 gap-2'>
         <Link href={"/"}>
             <h1 className='text-2xl text-secondary-500  drop-shadow-md font-bold flex gap-2 my-4 items-center'><RiMagicFill/> ArtBlender</h1>
         </Link>

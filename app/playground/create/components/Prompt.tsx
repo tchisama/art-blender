@@ -10,12 +10,14 @@ import usePromptStore from "@/store/promptStore";
 import useResultsStore from "@/store/resultsStore";
 import {TbDiamondFilled} from "react-icons/tb"
 import {useQuery } from "@tanstack/react-query";
+import useUserStore from "@/store/userStore";
 type Props = {}
 
 function Prompt({}: Props) {
     const {prompt,setPrompt,module,n,size,dallev} = usePromptStore()
     const {setResults} = useResultsStore()
     const [loading, setLoading] = React.useState(false)
+    const {user} = useUserStore()
     const generateImage = () => {
         setLoading(true)
         axios({
@@ -27,7 +29,7 @@ function Prompt({}: Props) {
                 "n":dallev=="dall-e-3"?1:n,
                 "dallev":dallev,
                 "size":(dallev=="dall-e-3")?"1024x1024":size,
-                "userId":"1"
+                "userId": user?._id??""
               }
           }).then((res)=>{
                 console.log(res.data.data)
