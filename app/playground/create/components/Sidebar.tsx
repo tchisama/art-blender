@@ -17,7 +17,7 @@ function Sidebar({}: Props) {
     <div className='w-[400px] sticky top-0 border-r  h-screen p-4'>
       {/* <h1 className='text-2xl drop-shadow-md font-bold'>ArtBlender</h1>
       <Divider className='my-4'/> */}
-      <Card>
+      <Card shadow='sm'>
         <CardBody>
           <div className='flex items-center gap-4'>
             <Avatar size="sm" alt="avatar" src={session?.user?.image ?? ""} />

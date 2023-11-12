@@ -33,7 +33,7 @@ function WorkSpace({}: Props) {
           >
 
             <div className="flex gap-12 p-4">
-                <div className="flex-[2]">
+                <div className="flex-[4]">
                     <ImageViewer key={i} img={r.url}/>
                 </div>
                 {/* <div className="flex flex-[3]  gap-6 flex-col">
@@ -42,7 +42,7 @@ function WorkSpace({}: Props) {
                   </h2>
                   <p className="flex-1">{r.prompt}</p>
                 </div> */}
-              <div className="flex flex-col flex-[3] justify-end gap-2">
+              <div className="flex flex-col flex-[4] justify-end gap-2">
                   <h2 className="text-2xl mt-2">
                       Revised Prompt
                   </h2>
@@ -50,7 +50,7 @@ function WorkSpace({}: Props) {
                   <div className="flex justify-end gap-2">
                     <Button variant="light" size="lg"  startContent={<FaShare/>}>Share</Button>
                     <a download={r.url} href={r.url}>
-                        <Button  size="lg" variant="solid" color={"secondary"}  startContent={<FiDownload/>}>Download</Button>
+                        <Button  size="lg" variant="solid"  startContent={<FiDownload/>}>Download</Button>
                     </a>
                   </div>
               </div>
