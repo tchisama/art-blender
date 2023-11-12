@@ -1,3 +1,4 @@
+import axios from "axios"
 import NextAuth from "next-auth"
 import GithubProvider from "next-auth/providers/github"
 import GoogleProvider from "next-auth/providers/google"
@@ -16,7 +17,14 @@ export const authOptions = {
     ]
     ,
     callbacks:{
-        async signIn({ user, account, profile, email, credentials }) {
+        async signIn({ user, account, profile, email, credentials }:any) {
+            axios.post("http://localhost:3001/users/register",{
+                name: user.name,
+                email: user.email,
+                image: user.image,
+                userId: user.id,
+                username: user.name +"_"+ Math.floor(Math.random() * 100),
+            })
             return true
         },    
     }
