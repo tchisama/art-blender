@@ -42,13 +42,13 @@ const Navbar = (props: Props) => {
   return (
     <div className='w-[250px] h-screen bg-background border-r flex flex-col p-4 gap-2'>
         <Link href={"/"}>
-            <h1 className='text-2xl text-secondary-500  drop-shadow-md font-bold flex gap-2 my-4 items-center'><RiMagicFill/> ArtBlender</h1>
+            <h1 className='text-2xl  drop-shadow-md font-bold flex gap-2 my-4 items-center'><RiMagicFill/> ArtBlender</h1>
         </Link>
         <div className='flex flex-col gap-2 mt-14 flex-1'>
             {
                 links.map((l,i)=>(
                     <Link key={i} href={l.href}>
-                    <Button color={"secondary"} variant={path === l.href ? 'solid' : 'light'} size='lg' href={l.href} startContent={l.icon}  className='w-full flex justify-start'>
+                    <Button color={path === l.href ? "secondary" :"default"} variant={path === l.href ? 'solid' : 'light'} size='lg' href={l.href} startContent={l.icon}  className='w-full flex justify-start'>
                         {l.name}
                     </Button>
                     </Link>

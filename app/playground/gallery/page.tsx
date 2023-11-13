@@ -2,11 +2,12 @@
 import ImageViewer from '@/components/ImageViewer'
 import useUserStore from '@/store/userStore'
 import { ImageResult } from '@/types/generatedImages'
-import { Card, CardBody, Image, Input, ScrollShadow, Spinner } from '@nextui-org/react'
+import { Button, Card, CardBody, Image, Input, ScrollShadow, Spinner } from '@nextui-org/react'
 import axios from 'axios'
 import React,{useState,useEffect} from 'react'
 import {BiSearch}  from "react-icons/bi"
-
+import {FiMoreHorizontal} from "react-icons/fi"
+import {AiOutlineHeart} from "react-icons/ai"
 type Props = {}
 
 const Page = (props: Props) => {
@@ -46,17 +47,21 @@ const Page = (props: Props) => {
             <Spinner size='lg' color="secondary"/>
           </div>
         ):
-      <ScrollShadow className='flex-1 overflow-y-auto'>
-      <div className='grid  p-4 grid-cols-3 gap-6 '>
+      <ScrollShadow hideScrollBar className='flex-1 overflow-y-auto'>
+      <div className='grid  p-4 grid-cols-3 gap-4 '>
         {
           gallery.filter((g)=>(g.prompt.includes(search)||g.results.some(r=>r.prompt.includes(search)))).map((_,i)=>(
               <Card key={i}>
                 <CardBody>
-                  <div className='flex flex-col'>
+                  <div className='flex flex-col relative'>
+                    <div className='flex gap-2 absolute right-2 z-20 top-2'>
+                      <Button className='' isIconOnly ><AiOutlineHeart/></Button>
+                      <Button className='' isIconOnly ><FiMoreHorizontal/></Button>
+                    </div>
                     <ImageViewer img={_.results[0]?.url}></ImageViewer>
                     <div className='flex-1 flex flex-col p-4 gap-4'>
-                      <h3 className='text-xl'>Revised Prompt</h3>
-                      <p className='text-sm'>{_.results[0]?.prompt}</p>
+                      {/* <h3 className='text-xl'>Revised Prompt</h3> */}
+                      <p className='text-sm'>{_.results[0]?.prompt.slice(0,100)} ...</p>
                     </div>
                   </div>
                 </CardBody>

@@ -17,6 +17,7 @@ function Prompt({}: Props) {
     const {prompt,setPrompt,module,n,size,dallev} = usePromptStore()
     const {setResults} = useResultsStore()
     const [loading, setLoading] = React.useState(false)
+    const [promptLoading,setPromptLoading] = React.useState(false)
     const {user} = useUserStore()
     const generateImage = () => {
         setLoading(true)
@@ -40,6 +41,19 @@ function Prompt({}: Props) {
           });
     };
 
+    const createPrompt = ()=>{
+        setPromptLoading(true)
+        axios.post("http://localhost:3001/prompts/createPrompt",{
+            module
+        }).then((res)=>{
+            setPrompt(res.data.prompt)
+        }).catch(()=>{
+            console.log("failed to create prompt")
+        }).finally(()=>{
+            setPromptLoading(false)
+        })
+    }
+
   return (
       <div className="flex mt-4 gap-2 flex-col">
         <Textarea
@@ -51,7 +65,7 @@ function Prompt({}: Props) {
         />
         <div className="flex justify-start gap-2 mt-3">
           <Tooltip content={"Random Prompt"}>
-            <Button disabled={loading} size="lg" variant="bordered" isIconOnly>
+            <Button isLoading={promptLoading} onClick={createPrompt} disabled={loading} size="lg" variant="bordered" isIconOnly>
               <BsStars />
             </Button>
           </Tooltip>
