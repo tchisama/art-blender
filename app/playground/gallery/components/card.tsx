@@ -2,9 +2,8 @@ import React from 'react'
 import ImageViewer from '@/components/ImageViewer'
 import {FiMoreHorizontal} from "react-icons/fi"
 import {AiOutlineHeart} from "react-icons/ai"
-import {Popover,Listbox, ListboxItem, PopoverTrigger, PopoverContent , Button, Card, CardBody, Image, Input, ScrollShadow, Spinner } from '@nextui-org/react'
+import {Popover,Listbox, ListboxItem, PopoverTrigger, PopoverContent , Button, Card, CardBody} from '@nextui-org/react'
 import { ImageResult } from '@/types/generatedImages'
-
 type Props = {
   _:ImageResult
 }
@@ -31,19 +30,12 @@ function CardG({_}: Props) {
 
 const More = ({_}:{_:ImageResult})=>{
   const actionHandler = (key:string)=>{
-      switch(key){
-        case "share":
-          break
-        case "open":
-          break
-        case "like":
-          break
-        case "delete":
-          break
-      }
+    alert("hi")
   }
   return (
+    <>
     <Popover placement="bottom" showArrow offset={10}>
+
     <PopoverTrigger>
             <Button className='' isIconOnly ><FiMoreHorizontal/></Button>
     </PopoverTrigger>
@@ -61,8 +53,7 @@ const More = ({_}:{_:ImageResult})=>{
       </Listbox>
     </PopoverContent>
   </Popover>
+    </>
   )
 }
-
-
 export default CardG
